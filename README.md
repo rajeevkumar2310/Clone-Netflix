@@ -16,3 +16,11 @@
 - Netflixgpt
  - Searchbar
  - Movie suggestions.
+
+
+ # developing NetflixGPT
+ - built header with netflix logo
+ - background image
+ - built login form.
+ - built Signup form.
+ - should add validations

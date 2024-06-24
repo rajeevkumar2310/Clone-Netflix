@@ -40,4 +40,7 @@
  - fetch trailer video, update the store with trailer video
  - Embed youtube video and autoplay it on mute
  - make main container look awesome
- 
+ - Built secondary component
+ - got images for my movie cards in my secondary component.
+ - Made the browse page amazing with Tailwind css
+ - created multiple custom hooks

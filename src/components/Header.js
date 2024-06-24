@@ -1,18 +1,24 @@
 import React from "react";
-import { NETFLIX_LOGO_URL, NETFLIX_USER_ICON } from "../utils/constants";
+import {
+  NETFLIX_LOGO_URL,
+  NETFLIX_USER_ICON,
+  SUPPORTED_LANGUAGES,
+} from "../utils/constants";
 import { useLocation } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { removeUser } from "../utils/userSlice";
 import useManageUser from "../utils/hooks/useManageUser";
+import { toggleShouldGptSearch } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const location = useLocation();
   const dispatch = useDispatch();
-  const isRootOrError = location.pathname === "/";
+  const isRoot = location.pathname === "/";
   const user = useSelector((store) => store.user);
-
+  const gptSearch = useSelector((store) => store.gpt.shouldGptSearch);
   useManageUser();
   const handleSignOut = () => {
     signOut(auth)
@@ -23,14 +29,38 @@ const Header = () => {
         console.log(error.message);
       });
   };
+  const handleGptSearchClick = () => {
+    dispatch(toggleShouldGptSearch());
+  };
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  };
 
   return (
     <div className="absolute w-full h-28 bg-gradient-to-b from-black px-8 py-2 z-10 flex justify-between">
       <div className="">
         <img src={NETFLIX_LOGO_URL} alt="logo" className="w-52" />
       </div>
-      {!isRootOrError && (
-        <div className="flex m-2 p-2">
+      {!isRoot && (
+        <div className="flex m-2 p-2 items-center">
+          {gptSearch && (
+            <select
+              className="px-4 py-2 m-2 bg-gray-800 text-white rounded-md"
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+          <button
+            className="px-4 py-2 m-2 bg-purple-700 text-white rounded-md"
+            onClick={handleGptSearchClick}
+          >
+            {gptSearch ? "Browse Movies" : "GPT Search"}
+          </button>
           <img
             className="w-12 h-12 "
             alt="user icon"

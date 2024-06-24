@@ -44,3 +44,6 @@
  - got images for my movie cards in my secondary component.
  - Made the browse page amazing with Tailwind css
  - created multiple custom hooks
+ - created gpt search page
+ - added gpt search bar
+ - added multilingual feature in our gpt search page (Huge thing!!)

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { NETFLIX_BACKGROUND_IMAGE_URL } from "../utils/constants";
 import { useSelector } from "react-redux";
 import { languageConstants } from "../utils/languageConstants";
@@ -13,6 +13,10 @@ const GptSearch = () => {
   const searchText = useRef(null);
   const movieList = useSelector((store) => store.gpt.movieSuggestions);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(deleteMovieSuggestions());
+  }, []);
 
   const getMovieSuggestions = async (movieName) => {
     const data = await fetch(
@@ -47,25 +51,25 @@ const GptSearch = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <img
         alt="background"
         src={NETFLIX_BACKGROUND_IMAGE_URL}
-        className="fixed -z-10"
+        className="fixed -z-10 object-cover h-screen w-screen"
       />
-      <div className="pt-36 w-5/12 m-auto">
+      <div className="pt-48 md:pt-36 w-full md:w-6/12 m-auto ">
         <form
-          className="bg-black rounded-md"
+          className="bg-black rounded-md flex justify-evenly"
           onSubmit={(e) => e.preventDefault()}
         >
           <input
             ref={searchText}
-            className="py-2 px-4 m-2 w-3/4 rounded-md"
+            className="py-2 px-4 m-2 w-[70%] rounded-md"
             type="text"
             placeholder={languageConstants[langKey].gptSearchPlaceHolder}
           />
           <button
-            className="rounded-md py-2 px-6 m-2 text-white bg-red-700 font-semibold"
+            className="rounded-md py-2 px-4 m-2 text-white bg-red-700 font-semibold w-[20%]"
             onClick={handleGptSearchClick}
           >
             {languageConstants[langKey].search}

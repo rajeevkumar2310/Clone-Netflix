@@ -37,15 +37,15 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-full h-28 bg-gradient-to-b from-black px-8 py-2 z-10 flex justify-between">
-      <div className="">
+    <div className="absolute w-full h-16 md:h-28 bg-gradient-to-b from-black px-8 pt-2 z-10 flex flex-col md:flex-row justify-between ">
+      <div className="mx-auto md:mx-0">
         <img src={NETFLIX_LOGO_URL} alt="logo" className="w-52" />
       </div>
       {!isRoot && (
-        <div className="flex m-2 p-2 items-center">
+        <div className="flex p-2 items-center justify-between">
           {gptSearch && (
             <select
-              className="px-4 py-2 m-2 bg-gray-800 text-white rounded-md"
+              className="px-4 py-2 mx-2 bg-gray-800 text-white rounded-md"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (

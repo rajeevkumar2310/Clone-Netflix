@@ -20,10 +20,10 @@ const Browse = () => {
       {gptSearch ? (
         <GptSearch />
       ) : (
-        <>
+        <div className="bg-black">
           <MainContainer />
           <SecondaryContainer />
-        </>
+        </div>
       )}
     </div>
   );

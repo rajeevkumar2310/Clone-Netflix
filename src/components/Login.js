@@ -103,13 +103,13 @@ const Login = () => {
         <img
           alt="background"
           src={NETFLIX_BACKGROUND_IMAGE_URL}
-          className="absolute"
+          className="fixed -z-10 object-cover h-screen w-screen"
         />
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="absolute bg-black bg-opacity-85 w-4/12 mx-auto my-36 right-0 left-0 rounded-sm px-10 pt-10 pb-20"
+          className="absolute bg-black bg-opacity-85 w-full md:w-2/5 lg:w-3/12 mx-auto my-36 right-0 left-0 rounded-sm px-10 pt-10 md:pb-20 pb-48"
         >
-          <h1 className="font-bold text-3xl text-white m-2 p-2">
+          <h1 className="font-bold text-xl md:text-3xl text-white m-2 p-2">
             {signUp ? "Sign Up" : "Sign In"}
           </h1>
           {signUp && (

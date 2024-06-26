@@ -48,4 +48,6 @@
  - added gpt search bar
  - added multilingual feature in our gpt search page (Huge thing!!)
  - created .env file to store secret keys
-  - added .env to git ignore.
+ - added .env to git ignore.
+ - we did memoization
+ - we made our app responsive

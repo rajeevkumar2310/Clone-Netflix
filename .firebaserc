@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "netflix-gpt-main-392be"
-  }
+    "default": "nf-clone-82c7c",
+    "production": "nf-clone-82c7c"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

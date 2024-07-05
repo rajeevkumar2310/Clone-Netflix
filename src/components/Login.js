@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import {
-  NETFLIX_USER_IMAGE_URL,
   NETFLIX_BACKGROUND_IMAGE_URL,
+  NETFLIX_USER_ICON,
 } from "../utils/constants";
 import validateForm from "../utils/validateForm";
 import { useDispatch } from "react-redux";
@@ -45,7 +45,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name?.current?.value,
-            photoURL: NETFLIX_USER_IMAGE_URL,
+            photoURL: NETFLIX_USER_ICON,
           })
             .then(() => {
               // Profile updated!
@@ -123,7 +123,7 @@ const Login = () => {
           <input
             ref={email}
             type="text"
-            placeholder="Email or mobile number"
+            placeholder="Email"
             className="rounded-sm m-2 p-3 text-gray-500 border border-gray-500 w-11/12 bg-black"
           />
           <input
@@ -140,7 +140,9 @@ const Login = () => {
               className="rounded-sm m-2 p-3 text-gray-500 border border-gray-500 w-11/12 bg-black"
             />
           )}
+
           <p className="text-red-600 m-2 p-2">{errorMessage}</p>
+
           <button
             onClick={handleValidateForm}
             className="font-semibold cursor-pointer bg-red-700 rounded-sm m-2 p-2 text-white text-center w-11/12"

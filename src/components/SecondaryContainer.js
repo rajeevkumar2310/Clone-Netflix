@@ -13,7 +13,7 @@ const SecondaryContainer = () => {
     return;
 
   return (
-    <div className=" bg-black">
+    <div className="w-screen bg-black">
       {/* We will have multiple movie lists 
     i.e., movie List * n
     Each Movie List will contain multiple movie cards

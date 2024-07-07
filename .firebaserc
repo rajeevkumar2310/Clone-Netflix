@@ -1,7 +1,7 @@
 {
   "projects": {
-    "default": "nf-clone-82c7c",
-    "production": "nf-clone-82c7c"
+    "default": "netflix-gpt-main-392be",
+    "production": "netflix-gpt-main-392be"
   },
   "targets": {},
   "etags": {},

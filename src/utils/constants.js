@@ -7,9 +7,6 @@ export const NETFLIX_LOGO_URL =
 export const NETFLIX_USER_ICON =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu9VhASGSfFj_77fZ748zUwZZ0HbLv35YYrd93apRFEjDlRDUcoBJlyiiLfzxymVaJMp0&usqp=CAU";
 
-export const NETFLIX_USER_IMAGE_URL =
-  "https://media.licdn.com/dms/image/C5603AQFwgEEJum6x6A/profile-displayphoto-shrink_800_800/0/1614683448158?e=1724889600&v=beta&t=MZEurb3I4lZt6Xhd7b3BdNSloOJRdAYDsVU6RYVxaBU";
-
 export const API_OPTIONS = {
   method: "GET",
   headers: {

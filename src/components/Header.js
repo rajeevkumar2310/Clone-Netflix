@@ -61,11 +61,7 @@ const Header = () => {
           >
             {gptSearch ? "Browse Movies" : "GPT Search"}
           </button>
-          <img
-            className="w-12 h-12 "
-            alt="user icon"
-            src={user?.photoURL || NETFLIX_USER_ICON}
-          />
+          <img className="w-12 h-12 " alt="user icon" src={NETFLIX_USER_ICON} />
           <button
             onClick={handleSignOut}
             className="mx-2 my-auto p-2 text-white font-bold"

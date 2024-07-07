@@ -1,4 +1,4 @@
-### features of netflix-gpt
+# Features of netflix-gpt
 - Login & Signup Screen/page - It will contain a signin/signup form. Once logged in, redirect to browse page.
 - Browse page: (Only after authentication)
  - Header
@@ -7,6 +7,7 @@
     - Title and description and Play button
     - Movie suggestions
         - MovieList * n
+           - MovieCard * n
 - Netflixgpt
  - Searchbar
  - Movie suggestions.

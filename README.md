@@ -9,8 +9,8 @@
         - MovieList * n
            - MovieCard * n
 - Gpt Search
- - Searchbar
- - Movie suggestions.
+  - Searchbar
+  - Movie suggestions.
 
 
  # developing NetflixGPT
